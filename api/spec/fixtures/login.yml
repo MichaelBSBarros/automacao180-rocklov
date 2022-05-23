@@ -1,0 +1,35 @@
+---
+- title: senha incorreta
+  payload:
+    email: session.login@userrocklov.com
+    password: qwe#3
+  code: 401
+  error: Unauthorized
+- title: usuario inexistente
+  payload:
+    email: login.inexistente@userrocklov.com
+    password: qwe#3ewq
+  code: 401
+  error: Unauthorized
+- title: email em branco
+  payload:
+    email: ''
+    password: qwe#3ewq
+  code: 412
+  error: required email
+- title: sem campo email
+  payload:
+    password: qwe#3ewq
+  code: 412
+  error: required email
+- title: senha em branco
+  payload:
+    email: session.login@userrocklov.com
+    password: ''
+  code: 412
+  error: required password
+- title: sem campo senha
+  payload:
+    email: session.login@userrocklov.com
+  code: 412
+  error: required password

@@ -1,0 +1,53 @@
+---
+- title: usuario ja existente
+  payload:
+    name: Massa Teste
+    email: usuario.cadastrado@userrocklov.com
+    password: qwe#3ewq
+  code: 409
+  error: Email already exists :(
+
+- title: nome em branco
+  payload:
+    name: ''
+    email: novo.usuario@userrocklov.com
+    password: qwe#3ewq
+  code: 412
+  error: required name
+
+- title: sem campo nome
+  payload:
+    email: novo.usuario@userrocklov.com
+    password: qwe#3ewq
+  code: 412
+  error: required name
+
+- title: email em branco
+  payload:
+    name: Sem Email
+    email: ''
+    password: qwe#3ewq
+  code: 412
+  error: required email
+
+- title: sem campo email
+  payload:
+    name: Sem Email
+    password: qwe#3ewq
+  code: 412
+  error: required email
+
+- title: password em branco
+  payload:
+    name: Sem Password
+    email: novo.usuario@userrocklov.com
+    password: ''
+  code: 412
+  error: required password
+
+- title: sem campo password
+  payload:
+    name: Sem Password
+    email: novo.usuario@userrocklov.com
+  code: 412
+  error: required password
